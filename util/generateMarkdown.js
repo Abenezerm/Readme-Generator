@@ -68,10 +68,10 @@ ${licenseSection[0]}
 ## Description
 ${data.describtion}
 ## Table of contents
-*[Installation](#installation)
-*[Usage](#usage)
-*[Credits](#credits)
-*[License](#license)
+* [Installation](#installation)
+* [Usage](#usage)
+* [Credits](#credits)
+* [License](#license)
 ## Installation
 ${data.instillation}
 ## Usage

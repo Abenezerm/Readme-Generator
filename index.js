@@ -1,6 +1,6 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
-const generateMarkdown = require ('./Utils/generateMarkdown.js')
+const generateMarkdown = require ('./Utils/generateMarkdown.js');
 
 const questions = [
   {
@@ -15,7 +15,7 @@ const questions = [
   },
   {
     type: "input",
-    name: "installation",
+    name: "instillation",
     message: "Provide detailed instructions for installing the application:"
   },
   {
@@ -26,7 +26,7 @@ const questions = [
   {
     type: 'input',
     name: 'collaborators',
-    message: "Enter your collaborators name along with their GitHub links, add a space between the name and link, seperate each collaborator with a comma (if none, just press enter):",
+    message: "Enter your collaborators username and their GitHub profile url, add a '=' between name and url, seperate each new collaborator with a comma (if none, just press enter):",
   },
   {
     type: 'confirm',
@@ -47,5 +47,9 @@ const questions = [
 ];
 
 inquirer.prompt(questions).then((data) => {
-  console.log(data)
+  const filename = `README.md`;
+  const content = generateMarkdown.generateMarkdown(data);
+  fs.writeFile(filename, content, (err) =>
+    err ? console.log(err) : console.log('Success!')
+  );
 })
